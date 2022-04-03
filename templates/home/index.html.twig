@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block body %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+        <div class="container">
+            <a class="navbar-brand" href="/">QA</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                </ul>
+                <form class="d-flex">
+                    <button class="btn btn-outline-danger me-3" type="submit">Авторизация</button>
+                    <button class="btn btn-outline-success" type="submit">Регистрация</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container container-card">
+        <div class="row">
+            {% for q in questions %}
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ q.category }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ q.date|date('d.m.Y, в H:m') }}</h6>
+                        <p class="card-text">{{ q.title }}</p>
+                        <a href="question/{{ q.id }}" class="btn btn-primary stretched-link">Перейти к вопросу (Ответов: {{ q.answerCount }} )</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="container">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Пестова Анна</a></li>
+                <li class="nav-item"><a href="/" class="nav-link px-2 text-muted">Миронова Злата</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">ПМ-19-1</a></li>
+            </ul>
+            <p class="text-center text-muted">© 2022 год.</p>
+        </footer>
+    </div>
+
+{% endblock %}

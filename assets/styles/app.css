@@ -1,0 +1,22 @@
+body {
+    min-height: 100vh;
+}
+
+.navbar {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container-card {
+    margin-top: 40px;
+}
+
+.card {
+    margin: 5px;
+    padding: .45rem .8rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    min-height: 220px;
+}
+
+
